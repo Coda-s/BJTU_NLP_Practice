@@ -1,5 +1,4 @@
 import os
-import torch
 import pandas as pd
 
 root_path = os.path.abspath('.')
@@ -12,23 +11,36 @@ name = ["star", "comment"]
 
 list = []
 
+def change(str):
+    str = str.replace("<br />", "", 10000)
+    return str
+
+# 将txt转为list
 def txt2list(file_path, select):
     file_path = os.path.join(file_path, select)
     files = os.listdir(file_path)
     print(file_path)
+    i = 10
     for file in files:
         path = os.path.join(file_path, file)
-        f = open(path, 'r', encoding='UTF-8')
-        n = len(file)
-        data = []
-        data.append(file[:n-4].split('_')[1])
-        str = f.read(10000)
-        data.append(str)
-        list.append(data)
-    
+        with open(path, 'r', encoding="gbk") as f:
+            n = len(file)
+            data = []
+            data.append(file[:n-4].split('_')[1])
+            str = f.read()
+            print(str)
+            i -= 1
+            if(i==0):
+                break
+            #str = change(str)
+            data.append(str)
+            list.append(data)
+            f.close()
+
+# 将list转为csv
 def list2csv(target_path, list):
     dataframe = pd.DataFrame(columns=name, data=list)
-    dataframe.to_csv(target_path)
+    dataframe.to_csv(target_path, encoding="UTF-8")
 
 if __name__ == "__main__":
     txt2list(train_data_path, 'pos')
