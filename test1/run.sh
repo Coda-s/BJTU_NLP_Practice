@@ -1,1 +1,1 @@
-echo "Hello world!"
+python train.py
