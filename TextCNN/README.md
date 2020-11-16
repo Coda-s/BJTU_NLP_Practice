@@ -8,21 +8,15 @@
 
 
 
-##### data
-
-数据集
-
-
-
 ##### model.py
 
 保存TextCNN模型
 
 
 
-##### txt2csv.py
+##### myDataset.py
 
-将txt数据转为csv格式
+处理数据，并将其转为torchtext.dataset类型
 
 
 
@@ -32,12 +26,6 @@
 
 
 
-##### test.py
+##### main.py
 
-测试脚本
-
-
-
-##### model
-
-保存模型
+主函数
