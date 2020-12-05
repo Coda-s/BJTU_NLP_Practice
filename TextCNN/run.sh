@@ -16,4 +16,4 @@ python main.py \
 --lr=${learning_rate} \
 --epochs=${epochs} \
 --batch-num=${batch_num} \
---shuffle
+--shuffle --train

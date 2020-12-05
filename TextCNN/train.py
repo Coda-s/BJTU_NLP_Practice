@@ -65,7 +65,6 @@ def train(train_iterator, validation_iterator, model, args):
             feature, target = batch.text, batch.label
             feature.t_()
             target.sub_(1)
-
             optimizer.zero_grad()
             logit = model(feature)
             loss = F.cross_entropy(logit, target)

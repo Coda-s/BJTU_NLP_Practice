@@ -60,9 +60,7 @@ if __name__ == "__main__":
     label_field = data.Field(sequential=False)
 
     train_iter, validation_iter = make_iterotor(text_field, label_field, args.train)
-    for batch in train_iter:
-        print(type(train_iter))
-        #print(batch.label)
+
     args.num = len(text_field.vocab)
     args.kernel_sizes = [int(k) for k in args.kernel_sizes.split(',')]
     args.class_num = len(label_field.vocab)-1
