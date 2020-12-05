@@ -1,3 +1,11 @@
+TextCNN/__pycache__
 TextCNN/data
 TextCNN/model
 TextCNN/.vector_cache
+BiLSTM/__pycache__
+BiLSTM/data
+BiLSTM/BERT-for-Sequence-Labeling-and-Text-Classification
+ESIM/__pycache__
+ESIM/.vector_cache
+ESIM/data
+ESIM/snli_1.0.zip

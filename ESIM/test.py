@@ -7,6 +7,7 @@ a = torch.tensor([
     [-2.0, 3.0]
 ])
 
-b = torch.tensor([3, 2])
-
-print((torch.max(a, 1)[1] == b).sum())
+a.transpose(0,1)
+print(a)
+a.transpose(0,1)
+print(a)
