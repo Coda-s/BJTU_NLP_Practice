@@ -16,8 +16,8 @@ class TextCNN(nn.Module):
 
         # 词向量
         self.embedding = nn.Embedding(num, dim)
-        self.embedding.weight.data.copy_(args.weight_matrix)
-        self.embedding.weight.requires_grad = False
+        #self.embedding.weight.data.copy_(args.weight_matrix)
+        #self.embedding.weight.requires_grad = False
         # 卷积层
         self.convs = nn.ModuleList([nn.Conv2d(input_num, kernel_num, (size, dim)) for size in kernel_sizes])
         # 线性层
